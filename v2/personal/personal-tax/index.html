@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Personal tax returns and planning | Elevation CPA</title>
+<meta name="description" content="Personal tax returns and planning for individuals, families, landlords, the self-employed and shareholders from our Port Perry, Uxbridge and Whitby offices.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal tax returns and planning | Elevation CPA">
+<meta property="og:description" content="Personal tax returns and planning for individuals, families, landlords, the self-employed and shareholders from our Port Perry, Uxbridge and Whitby offices.">
+<meta property="og:image" content="../../assets/og/personal-personal-tax.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/icon-32.png"><link rel="apple-touch-icon" href="../../assets/brand/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap">
+<link rel="preload" as="image" href="../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/800.webp" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/base.css">
+<link rel="stylesheet" href="../../assets/system.css">
+<style>/* Personal tax page */
+.pt-head .ornament { margin: calc(-1 * var(--space-2)) 0 var(--space-5); }
+
+/* Who we help: cross-border aside */
+.pt-who-aside {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+}
+.pt-who-aside::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-hairline-strong) 15%, var(--color-hairline-strong) 85%, transparent);
+}
+.pt-who-aside p {
+  margin: 0;
+  max-width: 48ch;
+  font-family: var(--font-serif);
+  font-size: var(--step-1);
+  line-height: 1.4;
+  color: var(--color-heading);
+}
+
+/* Filing steps on navy */
+.pt-process { overflow: hidden; }
+.pt-process::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--texture-hatch);
+  opacity: 0.05;
+  -webkit-mask-image: linear-gradient(90deg, #000, transparent 55%);
+  mask-image: linear-gradient(90deg, #000, transparent 55%);
+}
+.pt-process-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-9);
+  align-items: start;
+}
+.pt-process-head {
+  position: sticky;
+  top: calc(var(--pv-top, 0px) + var(--header-h) + var(--space-6));
+}
+.pt-process-head .section-intro { margin-bottom: var(--space-6); }
+.pt-steps { margin: 0 0 var(--space-5); padding: 0; list-style: none; }
+.pt-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  column-gap: var(--space-5);
+  padding: var(--space-6) 0;
+}
+.pt-step::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-hairline-strong), var(--color-hairline-strong) 70%, transparent);
+}
+.pt-step::after {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--c-brass);
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition: transform var(--dur-3) var(--ease-out);
+}
+.pt-step:hover::after { transform: scaleX(1); }
+.pt-step-num {
+  grid-row: span 2;
+  font-family: var(--font-serif);
+  font-size: var(--step-3);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--c-on-dark-muted);
+  transition: color var(--dur-2) var(--ease-out);
+}
+.pt-step:hover .pt-step-num { color: var(--c-on-dark); }
+.pt-step h3 { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.pt-step p { max-width: 54ch; color: var(--c-on-dark-muted); }
+
+/* Deadlines with date tile breaking out of the frame */
+.pt-deadline {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--space-9);
+  align-items: center;
+}
+.pt-deadline-body p { max-width: 54ch; }
+.pt-deadline-lede {
+  font-family: var(--font-serif);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-heading);
+}
+.pt-deadline-actions { margin: var(--space-6) 0 var(--space-5); }
+.pt-deadline-media {
+  --frame-x: 1rem;
+  --frame-y: -1rem;
+  position: relative;
+  margin: var(--space-5) 1rem 0 0;
+}
+.pt-deadline-media img {
+  aspect-ratio: 4 / 5;
+  object-position: 50% 45%;
+  box-shadow: var(--shadow-2);
+}
+.pt-date-tile {
+  position: absolute;
+  left: calc(-1 * var(--space-7));
+  bottom: var(--space-7);
+  z-index: 2;
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-5) var(--space-6);
+  background: var(--c-navy);
+  color: var(--c-on-dark);
+  border-top: 2px solid var(--c-brass);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-3);
+}
+.pt-date-tile span {
+  font-size: var(--label-size);
+  font-weight: 600;
+  letter-spacing: var(--label-track);
+  text-transform: uppercase;
+  color: var(--c-on-dark-muted);
+}
+.pt-date-tile strong {
+  font-family: var(--font-serif);
+  font-size: var(--step-4);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--display-track);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Checklist sheets */
+.pt-sheets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+.pt-sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  background: var(--c-paper);
+  border-top: 1px solid var(--color-hairline-strong);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--dur-3) var(--ease-out), box-shadow var(--dur-3) var(--ease-out);
+}
+.pt-sheet::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(225deg, var(--c-sand) 50%, var(--c-sand-deep) 50%);
+}
+.pt-sheet:hover,
+.pt-sheet:focus-within { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+.pt-sheet--lead { border-top: 2px solid var(--c-navy); }
+.pt-sheet .eyebrow { margin-bottom: var(--space-2); }
+.pt-sheet-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: var(--space-4);
+  background: var(--c-navy);
+  -webkit-mask: var(--icon-doc) center / contain no-repeat;
+  mask: var(--icon-doc) center / contain no-repeat;
+}
+.pt-sheet h3 { font-size: var(--step-1); margin-bottom: var(--space-2); }
+.pt-sheet p { color: var(--c-muted); }
+.pt-sheet .text-link { margin-top: auto; padding-top: var(--space-4); }
+
+/* Close with offices */
+.pt-close { overflow: hidden; }
+.pt-close::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--texture-hatch);
+  opacity: 0.05;
+  -webkit-mask-image: radial-gradient(ellipse at 20% 20%, #000 20%, transparent 70%);
+  mask-image: radial-gradient(ellipse at 20% 20%, #000 20%, transparent 70%);
+}
+.pt-close-copy p { max-width: 50ch; font-size: var(--step-1); color: var(--c-on-dark-muted); }
+.pt-close-copy .section-title { margin-bottom: var(--space-4); }
+.pt-close-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+}
+
+@media (max-width: 64em) {
+  .pt-sheets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 56.24em) {
+  .pt-process-grid,
+  .pt-deadline { grid-template-columns: 1fr; gap: var(--space-8); }
+  .pt-process-head { position: static; }
+  .pt-deadline-media { max-width: 30rem; margin-left: var(--space-6); }
+  .pt-deadline-media img { aspect-ratio: 4 / 3; }
+  .pt-date-tile { left: calc(-1 * var(--space-6)); bottom: var(--space-5); }
+}
+@media (max-width: 40em) {
+  .pt-sheets { grid-template-columns: 1fr; gap: var(--space-5); }
+  .pt-sheet { padding: var(--space-5); }
+  .pt-step { grid-template-columns: 3rem 1fr; column-gap: var(--space-4); }
+  .pt-step-num { font-size: var(--step-2); }
+  .pt-date-tile { padding: var(--space-4) var(--space-5); }
+  .pt-who-aside .button,
+  .pt-close-actions .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pt-sheet:hover, .pt-sheet:focus-within { transform: none; }
+}
+
+/* Revision 1 */
+/* Hero: reserved square box, stronger frame, shorter measure */
+.pt-head .page-intro { max-width: 34em; }
+.pt-head .page-head-media { aspect-ratio: 1 / 1; }
+.pt-head .page-head-media::before { border-color: var(--c-brass-dark); }
+.pt-head .page-head-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-position: 62% 50%;
+}
+.pt-head .ornament svg { width: 100%; height: auto; aspect-ratio: 4 / 1; }
+
+/* Breadcrumb: balanced wrap, items never split */
+.pt-head .breadcrumb ol { display: block; text-wrap: balance; }
+.pt-head .breadcrumb li { display: inline; white-space: nowrap; margin-right: var(--space-2); }
+
+@media (max-width: 56.24em) {
+  .pt-head .page-head-media { aspect-ratio: 4 / 3; max-width: min(34rem, calc(100% - 1rem)); }
+}
+@media (max-width: 40em) {
+  .pt-head .page-title { font-size: clamp(1.875rem, 1.2rem + 3.2vw, 2.125rem); }
+}
+
+/* Who we help: shared top for body copy */
+@supports (grid-template-rows: subgrid) {
+  .pt-who .service-grid { row-gap: 0; }
+  .pt-who .service-item {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    align-content: start;
+    padding-bottom: var(--space-8);
+  }
+  .pt-who .service-item > * { align-self: start; }
+  @media (max-width: 40em) { .pt-who .service-item { padding-bottom: var(--space-7); } }
+}
+
+/* Process: sticky head works (hidden overflow broke it) */
+.pt-process { overflow: clip; }
+
+/* Photographic band */
+.pt-band .photo-band-media img { object-position: 72% 50%; }
+.pt-band .section-title { max-width: 22ch; margin-bottom: var(--space-4); }
+@media (max-width: 47.99em) {
+  .pt-band::after { background: linear-gradient(180deg, rgba(19, 31, 49, 0.84), rgba(19, 31, 49, 0.92)); }
+}
+
+/* Checklists: three cards plus a ledger list */
+.pt-sheet .text-link { white-space: nowrap; }
+.pt-more {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  gap: var(--space-5) var(--space-7);
+  margin: var(--space-8) 0 var(--space-5);
+}
+.pt-more-title { font-size: var(--step-2); }
+.pt-more-list { margin: 0; padding: 0; list-style: none; }
+.pt-more-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  padding: var(--space-4) 0;
+  background: linear-gradient(90deg, var(--color-hairline-strong), var(--color-hairline-strong) 70%, transparent) bottom / 100% 1px no-repeat;
+}
+.pt-more-list li:first-child {
+  background:
+    linear-gradient(90deg, var(--color-hairline-strong), var(--color-hairline-strong) 70%, transparent) top / 100% 1px no-repeat,
+    linear-gradient(90deg, var(--color-hairline-strong), var(--color-hairline-strong) 70%, transparent) bottom / 100% 1px no-repeat;
+}
+.pt-more-name {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-serif);
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+.pt-more-list p { margin: 0; max-width: 52ch; color: var(--c-muted); }
+@media (max-width: 56.24em) {
+  .pt-more { grid-template-columns: 1fr; }
+}
+
+/* Header on phones: clear gap between CTA and menu */
+@media (max-width: 68.74em) {
+  .menu-toggle { margin-left: var(--space-2); }
+}
+
+/* Footer on phones: links in two columns */
+@media (max-width: 47.99em) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7) var(--space-5); }
+  .footer-brand,
+  .footer-contact { grid-column: 1 / -1; }
+}
+
+/* Revision 1 */
+/* Fix: h1 wraps inside its column, sits above the frame */
+.pt-head-copy { position: relative; z-index: 1; min-width: 0; }
+.pt-head .page-title {
+  max-width: 16ch;
+  white-space: normal;
+  overflow-wrap: break-word;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
+}
+
+/* Fix: phone breadcrumb on one line, contour clear of text, equal buttons */
+@media (max-width: 40em) {
+  .pt-head .breadcrumb li:last-child { display: none; }
+  .pt-head::before { inset: 52% 0 0 15%; opacity: 0.1; }
+  .pt-head .button-row .button { width: 100%; }
+}
+
+/* Fix: audience copy clears AA comfortably; titles step down */
+.pt-who .service-item p { color: var(--c-navy-600); }
+.pt-who .service-title { font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem); }
+
+/* Fix: process band left column holds its weight */
+.pt-process::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48%;
+  height: 65%;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--texture-contour-light) left bottom / cover no-repeat;
+  opacity: 0.09;
+  -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent);
+  mask-image: linear-gradient(90deg, #000 40%, transparent);
+}
+@media (max-width: 56.24em) { .pt-process::after { width: 100%; height: 40%; } }
+
+/* Fix: deadline lead steps clearly down from the h2 */
+.pt-deadline-lede {
+  font-size: var(--step-1);
+  font-weight: 400;
+  line-height: 1.45;
+}
+.pt-deadline-lede time {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Fix: checklist titles start on one line and fit at laptop width */
+.pt-sheet-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2rem;
+  margin-bottom: var(--space-4);
+}
+.pt-sheet-top .pt-sheet-icon { margin-bottom: 0; flex: none; }
+.pt-sheet-top .eyebrow { margin: 0; }
+.pt-sheet h3 {
+  font-size: clamp(1.125rem, 1.05rem + 0.2vw, 1.3125rem);
+  text-wrap: pretty;
+}
+
+/* Fix: offices band hours at the address size */
+.pt-close .footer-office-hours {
+  font-size: var(--step-0);
+  margin-bottom: var(--space-2);
+}
+
+/* Fix: footer no longer repeats (and contradicts) the offices band */
+body:has(.pt-close) .site-footer .footer-offices { display: none; }</style>
+<link rel="stylesheet" href="../../assets/preview.css">
+
+</head>
+<body class="no-hero">
+<nav class="pv-bar" aria-label="Design preview">
+<a class="pv-title" href="../../index.html">Elevation CPA design concept · v2</a>
+<span class="pv-tag"><span class="pv-dot" aria-hidden="true"></span>Personal and Family Services</span>
+<span class="pv-step"><a href="../../personal/index.html" aria-label="Previous page: Personal and Family Services">← Previous</a><a href="../../business/index.html" aria-label="Next page: Business Services">Next →</a></span>
+<span class="pv-tools">
+<label for="pv-page">Go to</label><select id="pv-page"><optgroup label="Homepage"><option value="../../home/index.html">Home</option></optgroup><optgroup label="Personal and Family Services"><option value="../../personal/index.html">Personal and Family Services</option><option value="../../personal/personal-tax/index.html" selected>Personal Tax</option></optgroup><optgroup label="Business Services"><option value="../../business/index.html">Business Services</option><option value="../../business/corporate-tax/index.html">Corporate Tax and Financial Statements</option></optgroup><optgroup label="About"><option value="../../about/index.html">About</option><option value="../../about/team/index.html">Our Team</option></optgroup><optgroup label="Locations"><option value="../../locations/port-perry/index.html">Port Perry Office</option></optgroup><optgroup label="Contact and Book a Consultation"><option value="../../contact/index.html">Contact and Book a Consultation</option></optgroup></select>
+<a href="../../design-system/index.html">Design system</a>
+<button type="button" class="pv-btn" id="pv-mobile" aria-pressed="false">Phone width</button>
+<button type="button" class="pv-btn" id="pv-structure" aria-pressed="false">Structure only</button>
+<button type="button" class="pv-btn pv-approve" id="pv-approve">Approve<span class="pv-long"> this version</span></button>
+</span>
+</nav>
+<header class="site-header site-header--over-hero" data-header><a class="skip-link" href="#main">Skip to main content</a><div class="header-bar"><div class="header-inner"><a class="brand" href="../../home/index.html" aria-label="Elevation CPA home"><img class="brand-logo brand-logo--on-dark" src="../../assets/brand/logo-on-dark.png" alt="" width="344" height="117"><img class="brand-logo brand-logo--on-light" src="../../assets/brand/logo-on-light.png" alt="" width="344" height="117"></a><nav class="main-nav" id="main-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item has-children"><a class="nav-link is-current" href="../../personal/index.html">Personal Services</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-personal-and-family-services"><span class="sr-only">Personal and Family Services pages</span></button><ul class="submenu" id="sub-personal-and-family-services"><li class="nav-item"><a class="nav-link is-current" href="../../personal/personal-tax/index.html" aria-current="page">Personal Tax</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Estate and Trust Planning</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Cross-Border and US Tax</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="../../business/index.html">Business Services</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-business-services"><span class="sr-only">Business Services pages</span></button><ul class="submenu" id="sub-business-services"><li class="nav-item"><a class="nav-link" href="../../business/corporate-tax/index.html">Corporate Tax and Financial Statements</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Bookkeeping, Payroll and HST</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Business Advisory</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Audit and Review Engagements</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">CRA Disputes and Audit Support</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="../../about/index.html">About</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-about"><span class="sr-only">About pages</span></button><ul class="submenu" id="sub-about"><li class="nav-item"><a class="nav-link" href="../../about/team/index.html">Our Team</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="#" data-unbuilt="1">Locations</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-locations"><span class="sr-only">Locations pages</span></button><ul class="submenu" id="sub-locations"><li class="nav-item"><a class="nav-link" href="../../locations/port-perry/index.html">Port Perry Office</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Uxbridge Office</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Whitby Office</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="#" data-unbuilt="1">Client Resources</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-client-resources"><span class="sr-only">Client Resources pages</span></button><ul class="submenu" id="sub-client-resources"><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Frequently Asked Questions</a></li></ul></li><li class="nav-item"><a class="nav-link" href="../../contact/index.html">Contact</a></li></ul></nav><a class="header-cta" href="../../contact/index.html" aria-label="Book a consultation"><span class="header-cta-short">Consultation</span><span class="header-cta-full">Book a consultation</span></a><button class="menu-toggle" type="button" data-menu-toggle aria-controls="main-nav" aria-expanded="false"><span class="menu-toggle-label">Menu</span></button></div></div></header>
+<main id="main">
+<section class="page-head page-head--media pt-head" aria-labelledby="page-title">
+  <div class="container">
+    <div class="page-head-inner">
+      <div class="pt-head-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../../home/index.html">Home</a></li>
+            <li><a href="../../personal/index.html">Personal and family services</a></li>
+            <li><span aria-current="page">Personal tax</span></li>
+          </ol>
+        </nav>
+        <p class="eyebrow eyebrow--rule">Personal tax</p>
+        <h1 class="page-title" id="page-title">Personal tax returns and planning in Durham&nbsp;Region</h1>
+        <span class="ornament ornament--small" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M2 38h156" opacity=".35"></path><path d="M2 34C34 34 52 31 74 26S118 14 150 10" opacity=".55"></path><path d="M2 29C30 29 50 26 72 20S114 8 146 5" opacity=".8"></path><path d="M2 24C26 24 46 21 68 15S108 4 140 2"></path><circle cx="150" cy="10" r="2.5" fill="currentColor" stroke="none"></circle></svg></span>
+        <p class="page-intro">Elevation CPA prepares personal tax returns and plans ahead with individuals and families from our offices in Port Perry, Uxbridge and&nbsp;Whitby.</p>
+        <div class="button-row">
+          <a class="button button--primary" href="../../contact/index.html">Book a personal tax appointment</a>
+          <a class="button button--ghost" href="#checklists">Download the tax checklist</a>
+        </div>
+      </div>
+      <figure class="page-head-media frame-offset">
+        <picture><source type="image/avif" srcset="../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/480.avif 480w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/800.avif 800w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/1200.avif 1200w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/1536.avif 1536w" sizes="(min-width: 56.25em) 38vw, 100vw"><source type="image/webp" srcset="../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/480.webp 480w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/800.webp 800w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/1200.webp 1200w, ../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/1536.webp 1536w" sizes="(min-width: 56.25em) 38vw, 100vw"><img src="../../assets/media/e3326e47-52ba-4064-8180-4f883898cc90-59b654bae7a7/1200.webp" alt="An open folder of tax slips and a printed return beside a pencil and a brass desk lamp in morning light" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" data-media-id="e3326e47-52ba-4064-8180-4f883898cc90" data-max-width="1536" data-provenance="generated" style="object-position:60% 60%;background-image:url(data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoYABAAPu1iqk4ppaQiMAgBMB2JYgCdMoADNSZWnfXt7+eZQAD+tYuJ++ixSyZLn4nKLT1FhXZX0TFpPYKM1x/kpaqZI/pQGijSZzM4mVbjO2MMpwr41sKbFDoLTBYR6CT8AAAA)"></picture>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light" aria-labelledby="more-title">
+  <div class="container">
+    <div class="split-ledger split-ledger--reverse">
+      <figure class="split-media frame-offset" data-reveal="">
+        <picture><source type="image/avif" srcset="../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/480.avif 480w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/800.avif 800w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/1200.avif 1200w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/1536.avif 1536w" sizes="(min-width: 56.25em) 50vw, 92vw"><source type="image/webp" srcset="../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/480.webp 480w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/800.webp 800w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/1200.webp 1200w, ../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/1536.webp 1536w" sizes="(min-width: 56.25em) 50vw, 92vw"><img src="../../assets/media/1fd359b5-8648-4889-b89d-1d29f4aacace-2b020f49d89a/1200.webp" alt="A leather notebook, a pen and a mug on a rustic table overlooking a gravel lane and hay fields at sunset" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="1fd359b5-8648-4889-b89d-1d29f4aacace" data-max-width="1536" data-provenance="generated" style="object-position:35% 70%;background-image:url(data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoYABAAPu1kqU2ppaOiMAgBMB2JQBOgBDsFlICIgcUgAP6aWkrnZz/y3xqt4TvBY5JM0nK2eeh6iYRkwpxq+x4AAAA=)"></picture>
+      </figure>
+      <div class="split-panel" data-reveal="" style="--reveal-index: 1">
+        <p class="eyebrow eyebrow--rule">Our approach</p>
+        <h2 id="more-title">More than filling in&nbsp;forms</h2>
+        <p>Whether you are a contractor or a small business owner, there is seldom such a thing as a simple tax return. We look at your income streams, your age and the other parts of your situation that affect your tax. The goal is to reduce or defer the tax you pay this year, which means arranging things legally so it’s paid later, and to help you plan for the years&nbsp;ahead.</p>
+        <p>Tax rules change every year. We keep up with those changes so you don’t miss a deduction or credit you’re entitled to. If something new applies to you, we’ll explain it in plain language and tell you what to do&nbsp;next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt pt-who" aria-labelledby="who-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <p class="eyebrow eyebrow--rule">Who we help</p>
+        <h2 class="section-title" id="who-title">Who we prepare returns&nbsp;for</h2>
+      </div>
+      <p class="section-intro">We prepare personal returns for people in many different situations. Whether you earn a salary, run a business, collect rent or take dividends from your corporation, we’ll prepare your return accurately and explain what it means for&nbsp;you.</p>
+    </div>
+    <ul class="service-grid">
+      <li class="service-item" data-reveal="">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"></path><path d="M9.5 20v-5h5v5"></path></svg></span>
+        <h3 class="service-title">Individuals and families</h3>
+        <p>Employment income, pensions, investment income, credits and deductions, prepared accurately and on time for you and your&nbsp;household.</p>
+      </li>
+      <li class="service-item" data-reveal="" style="--reveal-index: 1">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1.5"></rect><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M3 12h18"></path></svg></span>
+        <h3 class="service-title"><span class="nowrap">Self-employed</span> and contractors</h3>
+        <p>Business income and expenses, including vehicle and home office costs, reported correctly so you claim what you’re entitled&nbsp;to.</p>
+      </li>
+      <li class="service-item" data-reveal="" style="--reveal-index: 2">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l9-9M16 7l3 3M14 9l2 2"></path></svg></span>
+        <h3 class="service-title">Rental property owners</h3>
+        <p>Rental income and expenses reported properly, with advice on what you can claim and the records you should&nbsp;keep.</p>
+      </li>
+      <li class="service-item" data-reveal="">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="12" r="5.5"></circle><circle cx="15.5" cy="12" r="5.5"></circle></svg></span>
+        <h3 class="service-title">Business owners and partners</h3>
+        <p>Personal returns that line up with your business or partnership, so income is reported correctly on both&nbsp;sides.</p>
+      </li>
+      <li class="service-item" data-reveal="" style="--reveal-index: 1">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.5"></ellipse><path d="M5 6v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6M5 12v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path></svg></span>
+        <h3 class="service-title">Shareholders taking salary or&nbsp;dividends</h3>
+        <p>Personal returns for owners who pay themselves from their corporation. We’ll explain how salary and dividends are taxed and plan the mix with&nbsp;you.</p>
+      </li>
+      <li class="service-item" data-reveal="" style="--reveal-index: 2">
+        <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19h18"></path><path d="M4 15c4 0 6-2 9-6s5-4 7-4"></path><circle cx="20" cy="5" r="1.2"></circle></svg></span>
+        <h3 class="service-title">Planning for <span class="nowrap">owner-managers</span> and&nbsp;directors</h3>
+        <p>Personal tax planning and financial planning for owner-managers, directors and executives, including retirement planning and reviewing the tax impact of your investments with your&nbsp;advisor.</p>
+      </li>
+    </ul>
+    <div class="pt-who-aside" data-reveal="">
+      <p>If you have US income, US property or US citizenship, see our cross-border and US tax&nbsp;services.</p>
+      <a class="button button--ghost" href="#" data-unbuilt="1">Cross-border and US tax</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark pt-process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="pt-process-grid">
+      <div class="pt-process-head">
+        <p class="eyebrow">Getting started</p>
+        <h2 class="section-title" id="process-title">How filing with us&nbsp;works</h2>
+        <p class="section-intro">Getting started is simple. Here is what to&nbsp;expect.</p>
+        <a class="button button--primary" href="../../contact/index.html">Book a personal tax appointment</a>
+      </div>
+      <div>
+        <ol class="pt-steps">
+          <li class="pt-step" data-reveal="">
+            <span class="pt-step-num" aria-hidden="true">01</span>
+            <h3>Download the checklist</h3>
+            <p>Start with our personal tax checklist. It lists the slips, receipts and information we need to prepare your&nbsp;return.</p>
+          </li>
+          <li class="pt-step" data-reveal="" style="--reveal-index: 1">
+            <span class="pt-step-num" aria-hidden="true">02</span>
+            <h3>Gather your slips and&nbsp;receipts</h3>
+            <p>Collect your tax slips, receipts and any letters from the Canada Revenue Agency (CRA). Use the extra checklists if you have rental, self-employment or other&nbsp;income.</p>
+          </li>
+          <li class="pt-step" data-reveal="" style="--reveal-index: 2">
+            <span class="pt-step-num" aria-hidden="true">03</span>
+            <h3>Send us your documents</h3>
+            <p>Send everything by email or by mail, or drop it off at your local office in Port Perry, Uxbridge or&nbsp;Whitby.</p>
+          </li>
+          <li class="pt-step" data-reveal="" style="--reveal-index: 3">
+            <span class="pt-step-num" aria-hidden="true">04</span>
+            <h3>We review and follow&nbsp;up</h3>
+            <p>We review your information and contact you with any questions, so nothing is&nbsp;missed.</p>
+          </li>
+          <li class="pt-step" data-reveal="" style="--reveal-index: 4">
+            <span class="pt-step-num" aria-hidden="true">05</span>
+            <h3>You review and sign</h3>
+            <p>We walk you through your completed return. You review it and sign the authorization so we can&nbsp;file.</p>
+          </li>
+          <li class="pt-step" data-reveal="" style="--reveal-index: 5">
+            <span class="pt-step-num" aria-hidden="true">06</span>
+            <h3>We file and explain your&nbsp;result</h3>
+            <p>We file your return with the CRA and explain your refund or balance owing, plus anything to plan for next&nbsp;year.</p>
+          </li>
+        </ol>
+        <p class="editor-note">Confirm the secure upload method and add it as the first option in step&nbsp;3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light" aria-labelledby="deadlines-title">
+  <div class="container">
+    <div class="pt-deadline">
+      <div class="pt-deadline-body" data-reveal="">
+        <p class="eyebrow eyebrow--rule">Deadlines</p>
+        <h2 class="section-title" id="deadlines-title">Key personal tax deadlines</h2>
+        <p class="pt-deadline-lede">Most personal tax returns are due <time datetime="--04-30">April 30</time>.</p>
+        <p>If you or your spouse or common-law partner are self-employed, your filing deadline is later. Any balance owing is still due <time datetime="--04-30">April 30</time>, so it’s worth getting your documents to us&nbsp;early.</p>
+        <p>During tax season our offices keep longer hours. Appointments outside regular hours can also be&nbsp;arranged.</p>
+        <div class="button-row pt-deadline-actions">
+          <a class="button button--secondary" href="#" data-unbuilt="1">Contact your local office</a>
+        </div>
+        <p class="editor-note">Confirm the current self-employed filing date and add it to the second&nbsp;paragraph.</p>
+        <p class="editor-note">Confirm the tax-season extended office hours and add them to the third&nbsp;paragraph.</p>
+      </div>
+      <figure class="pt-deadline-media frame-offset" data-reveal="" style="--reveal-index: 1">
+        <picture><source type="image/avif" srcset="../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/480.avif 480w, ../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/800.avif 800w, ../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/1024.avif 1024w" sizes="(min-width: 56.25em) 40vw, 90vw"><source type="image/webp" srcset="../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/480.webp 480w, ../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/800.webp 800w, ../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/1024.webp 1024w" sizes="(min-width: 56.25em) 40vw, 90vw"><img src="../../assets/media/ef1e5f1d-678a-4fac-8c09-b8b0351f4787-25924e30842b/1024.webp" alt="A calendar page with one date circled in pencil beside a folder of tax slips" width="1024" height="1536" loading="lazy" decoding="async" data-media-id="ef1e5f1d-678a-4fac-8c09-b8b0351f4787" data-max-width="1024" data-provenance="generated" style="object-position:55% 58%;background-image:url(data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBgCdASoYACQAPu1gqk2ppaQiMBVdUTAdiWMAsR+OhCAHgzm76B+XiuggeizFht4NF/1n3+zaW0h9/XknWgAA/qC00NztZ853s+R6dOocdA32rcQ+8TLxht1RYnFo2ZY7KbyBHCBcDPH29BP+GSbm8oAJ0plycXIixMPUtBzIoRfIw+i+ccQSAtHv30f19lLw8oc9Hqqnx676Iz35RxuwHBSmOQAAAAA=)"></picture>
+        <p class="pt-date-tile" aria-hidden="true"><span>Most returns due</span><strong>April 30</strong></p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--photo pt-band" aria-labelledby="band-title">
+  <div class="photo-band-media">
+    <picture><source type="image/avif" srcset="../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/480.avif 480w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/800.avif 800w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/1200.avif 1200w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/1536.avif 1536w" sizes="100vw"><source type="image/webp" srcset="../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/480.webp 480w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/800.webp 800w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/1200.webp 1200w, ../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/1536.webp 1536w" sizes="100vw"><img src="../../assets/media/54bad446-92f3-4883-a95c-e84771efd46d-fde90534d59d/1200.webp" alt="A notebook and pen on a weathered wooden dock over a misty lake at sunrise, with a hand holding a ceramic mug" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="54bad446-92f3-4883-a95c-e84771efd46d" data-max-width="1536" data-provenance="generated" style="object-position:68% 60%;background-image:url(data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASoYABAAPu1iqk4ppaQiMAgBMB2JYgCdACHnM4tXDOw+1GqHkAD+4EnnzdzBj18+GmGX0JcO7pGkCWk6e1ZiY6lYxkEjQt9AIoJmtglTSGXgAA==)"></picture>
+  </div>
+  <div class="container">
+    <div class="photo-band-content" data-reveal="">
+      <h2 class="section-title" id="band-title">Download <span class="nowrap">the checklist,</span> send your documents, and we take&nbsp;it <span class="nowrap">from there.</span></h2>
+      <a class="text-link" href="#checklists">Choose the checklists you need</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="checklists" aria-labelledby="checklists-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <p class="eyebrow eyebrow--rule">Resources</p>
+        <h2 class="section-title" id="checklists-title">Checklists to download</h2>
+        <p class="section-intro">Use these checklists to gather what we need. Download the ones that match your&nbsp;situation.</p>
+      </div>
+      <a class="text-link" href="#" data-unbuilt="1">See all client resources</a>
+    </div>
+    <ul class="pt-sheets">
+      <li data-reveal="">
+        <article class="pt-sheet pt-sheet--lead">
+          <div class="pt-sheet-top">
+            <span class="pt-sheet-icon" aria-hidden="true"></span>
+            <p class="eyebrow">Start here</p>
+          </div>
+          <h3>Personal income tax checklist</h3>
+          <p>The main checklist for every personal return: slips, receipts and personal&nbsp;details.</p>
+          <a class="text-link" href="#" data-unbuilt="1">Download checklist<span class="sr-only">: personal income tax</span></a>
+        </article>
+      </li>
+      <li data-reveal="" style="--reveal-index: 1">
+        <article class="pt-sheet">
+          <div class="pt-sheet-top">
+            <span class="pt-sheet-icon" aria-hidden="true"></span>
+          </div>
+          <h3>Rental checklist</h3>
+          <p>Rental income and expenses for each property you&nbsp;own.</p>
+          <a class="text-link" href="#" data-unbuilt="1">Download checklist<span class="sr-only">: rental</span></a>
+        </article>
+      </li>
+      <li data-reveal="" style="--reveal-index: 2">
+        <article class="pt-sheet">
+          <div class="pt-sheet-top">
+            <span class="pt-sheet-icon" aria-hidden="true"></span>
+          </div>
+          <h3>Self-employment checklist</h3>
+          <p>Business income and expenses if you work for yourself or as a&nbsp;contractor.</p>
+          <a class="text-link" href="#" data-unbuilt="1">Download checklist<span class="sr-only">: self-employment</span></a>
+        </article>
+      </li>
+    </ul>
+    <div class="pt-more" data-reveal="">
+      <h3 class="pt-more-title">More checklists</h3>
+      <ul class="pt-more-list">
+        <li>
+          <div>
+            <h4 class="pt-more-name">Vehicle and home expenses&nbsp;checklist</h4>
+            <p>Vehicle use and home office costs you may be able to&nbsp;claim.</p>
+          </div>
+          <a class="text-link" href="#" data-unbuilt="1">Download<span class="sr-only"> the vehicle and home expenses checklist</span></a>
+        </li>
+        <li>
+          <div>
+            <h4 class="pt-more-name">Eligible educator tax credit&nbsp;checklist</h4>
+            <p>Teaching supplies you bought yourself that may qualify for the&nbsp;credit.</p>
+          </div>
+          <a class="text-link" href="#" data-unbuilt="1">Download<span class="sr-only"> the eligible educator tax credit checklist</span></a>
+        </li>
+        <li>
+          <div>
+            <h4 class="pt-more-name">Travel medical expenses checklist</h4>
+            <p>Travel costs for medical care that may be&nbsp;claimable.</p>
+          </div>
+          <a class="text-link" href="#" data-unbuilt="1">Download<span class="sr-only"> the travel medical expenses checklist</span></a>
+        </li>
+      </ul>
+    </div>
+    <p class="editor-note">Link each checklist to its downloadable file once the PDFs are&nbsp;uploaded.</p>
+  </div>
+</section>
+
+<section class="section section--dark footer-offices pt-close" aria-labelledby="start-title">
+  <div class="container">
+    <div class="footer-offices-head">
+      <div class="pt-close-copy" data-reveal="">
+        <span class="ornament" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M2 38h156" opacity=".35"></path><path d="M2 34C34 34 52 31 74 26S118 14 150 10" opacity=".55"></path><path d="M2 29C30 29 50 26 72 20S114 8 146 5" opacity=".8"></path><path d="M2 24C26 24 46 21 68 15S108 4 140 2"></path><circle cx="150" cy="10" r="2.5" fill="currentColor" stroke="none"></circle></svg></span>
+        <h2 class="section-title" id="start-title">Start your return</h2>
+        <p>Book an appointment at our Port Perry, Uxbridge or Whitby office, or meet with us by video call at a time that suits you. New clients are&nbsp;welcome.</p>
+        <p>We discuss fees up front, before any work&nbsp;begins.</p>
+      </div>
+      <div class="pt-close-actions" data-reveal="" style="--reveal-index: 1">
+        <a class="button button--primary" href="../../contact/index.html">Book a personal tax appointment</a>
+        <a class="text-link" href="#" data-unbuilt="1">Read our FAQ</a>
+      </div>
+    </div>
+    <ul class="footer-offices-list">
+      <li class="footer-office" data-reveal="">
+        <h3 class="footer-office-name">Port Perry</h3>
+        <address>181&nbsp;Queen Street<br>Port Perry, ON L9L 1B8</address>
+        <p class="footer-office-phone"><a href="tel:9059850006"><span class="nowrap">905⁠-⁠985⁠-⁠0006</span></a></p>
+        <p class="footer-office-hours">Mon–Fri, 9:00&nbsp;am –&nbsp;5:00&nbsp;pm</p>
+        <a class="text-link" href="../../locations/port-perry/index.html">Visit the Port Perry office page</a>
+      </li>
+      <li class="footer-office" data-reveal="" style="--reveal-index: 1">
+        <h3 class="footer-office-name">Uxbridge</h3>
+        <address>2&nbsp;Brock Street West<br>Uxbridge, ON L9P 1P2</address>
+        <p class="footer-office-phone"><span class="editor-note">Confirm the Uxbridge office phone number.</span></p>
+        <p class="footer-office-hours">Mon–Fri, 9:00&nbsp;am –&nbsp;5:00&nbsp;pm</p>
+        <a class="text-link" href="#" data-unbuilt="1">Visit the Uxbridge office page</a>
+      </li>
+      <li class="footer-office" data-reveal="" style="--reveal-index: 2">
+        <h3 class="footer-office-name">Whitby</h3>
+        <address>100&nbsp;Dundas Street West<br>Whitby, ON L1N 2L9</address>
+        <p class="footer-office-phone"><a href="tel:9056662111"><span class="nowrap">905⁠-⁠666⁠-⁠2111</span></a></p>
+        <p class="footer-office-hours">Mon–Fri, 9:00&nbsp;am –&nbsp;5:00&nbsp;pm</p>
+        <a class="text-link" href="#" data-unbuilt="1">Visit the Whitby office page</a>
+      </li>
+    </ul>
+    <p class="editor-note">Confirm the fee approach for personal returns and add it after “We discuss fees up&nbsp;front”.</p>
+    <p class="editor-note">Confirm each office’s street address, phone number and regular hours. The project’s footer data (204&nbsp;Casimir Street, 905⁠-⁠985⁠-⁠0006; 601&nbsp;Brock Street, 905⁠-⁠666⁠-⁠2111; no Uxbridge entry; 8:30&nbsp;am – 4:30&nbsp;pm) differs from this band; one confirmed set should drive&nbsp;both.</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="ornament" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M2 38h156" opacity=".35"/><path d="M2 34C34 34 52 31 74 26S118 14 150 10" opacity=".55"/><path d="M2 29C30 29 50 26 72 20S114 8 146 5" opacity=".8"/><path d="M2 24C26 24 46 21 68 15S108 4 140 2"/><circle cx="150" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg></div><div class="footer-grid"><div class="footer-brand"><img class="footer-logo" src="../../assets/brand/logo-on-dark.png" alt="Elevation CPA" width="344" height="117"><p class="footer-tagline">Local CPAs for Durham Region businesses and families, in Port Perry, Uxbridge and Whitby.</p><a class="button footer-cta" href="../../contact/index.html">Book a consultation</a></div><nav class="footer-nav" aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul><li><a href="../../personal/index.html">Personal Services</a></li><li><a href="../../business/index.html">Business Services</a></li><li><a href="../../about/index.html">About</a></li><li><a href="#" data-unbuilt="1">Locations</a></li><li><a href="#" data-unbuilt="1">Client Resources</a></li><li><a href="../../contact/index.html">Contact</a></li></ul></nav><nav class="footer-nav" aria-label="More"><h2 class="footer-heading">More</h2><ul><li><a href="#" data-unbuilt="1">Careers</a></li><li><a href="#" data-unbuilt="1">Privacy Policy</a></li><li><a href="#" data-unbuilt="1">Accessibility</a></li></ul></nav><div class="footer-offices"><h2 class="footer-heading">Offices</h2><ul><li class="footer-office"><a class="footer-office-name" href="../../locations/port-perry/index.html">Port Perry</a><address><p>204 Casimir Street</p><p><a href="tel:9059850006">905-985-0006</a></p><p>Mon–Fri 8:30 am–4:30 pm</p></address></li><li class="footer-office"><a class="footer-office-name" href="#" data-unbuilt="1">Whitby</a><address><p>601 Brock Street</p><p><a href="tel:9056662111">905-666-2111</a></p></address></li></ul></div></div><div class="footer-legal"><p>© 2026 Elevation CPA</p></div></div></footer>
+<script src="../../assets/config.js"></script><script src="../../assets/preview.js"></script>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

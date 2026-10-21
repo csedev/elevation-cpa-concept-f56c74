@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Personal and family tax services | Elevation CPA</title>
+<meta name="description" content="Personal tax returns, estate and trust planning, US and cross-border filings and CRA support for families in Port Perry, Uxbridge, Whitby and Durham Region.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal and family tax services | Elevation CPA">
+<meta property="og:description" content="Personal tax returns, estate and trust planning, US and cross-border filings and CRA support for families in Port Perry, Uxbridge, Whitby and Durham Region.">
+<meta property="og:image" content="../assets/og/personal.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/icon-32.png"><link rel="apple-touch-icon" href="../assets/brand/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap">
+<link rel="preload" as="image" href="../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/800.webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/system.css">
+<style>/* Personal and family services */
+.hero-horizon--page { min-height: max(36rem, 84svh); padding-bottom: var(--space-10); }
+.hero-horizon--page .hero-media img { object-position: 66% 55%; }
+.hero-horizon--page .hero-title { max-width: 16ch; }
+.hero-horizon--page .hero-cue { bottom: var(--space-6); }
+@media (max-width: 47.99em) {
+  .hero-horizon--page { min-height: max(32rem, 88svh); padding-bottom: var(--space-8); }
+}
+
+/* Service index: tall lead card beside head and row cards */
+.svc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-areas: "lead head" "lead list";
+  gap: 0 var(--space-8);
+  align-items: start;
+}
+.svc-layout > .section-head { grid-area: head; margin-bottom: var(--space-7); }
+.svc-lead { grid-area: lead; }
+.svc-list { grid-area: list; display: grid; gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
+.route-card--lead .route-card-media { aspect-ratio: 4 / 5; }
+.route-card--lead .route-card-media img { object-position: 42% 50%; }
+.route-card--row { flex-direction: row; }
+.route-card--row .route-card-media { flex: 0 0 34%; aspect-ratio: auto; min-height: 11rem; }
+.route-card--row .route-card-body { min-height: 0; padding: var(--space-5) var(--space-6); }
+.route-card--row .route-card-title { font-size: var(--step-1); }
+.route-card--row .route-card-more { padding-top: var(--space-3); }
+@media (max-width: 56.24em) {
+  .svc-layout { grid-template-columns: 1fr; grid-template-areas: "head" "lead" "list"; row-gap: var(--space-5); }
+  .svc-layout > .section-head { margin-bottom: var(--space-3); }
+  .route-card--lead .route-card-media { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 30em) {
+  .route-card--row { flex-direction: column; }
+  .route-card--row .route-card-media { flex: none; aspect-ratio: 3 / 2; min-height: 0; }
+}
+
+/* Both sides: navy split with breakout chip */
+.both-sides::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--texture-contour-light) left bottom / cover no-repeat;
+  opacity: 0.06;
+  -webkit-mask-image: linear-gradient(90deg, #000 10%, transparent 70%);
+  mask-image: linear-gradient(90deg, #000 10%, transparent 70%);
+}
+.both-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-9); align-items: center; }
+.both-text p { color: var(--c-on-dark-muted); max-width: 52ch; }
+.both-text .button { margin-top: var(--space-5); }
+.both-media { position: relative; margin-bottom: var(--space-7); }
+.both-photo { --frame-x: 1rem; --frame-y: -1rem; }
+.both-photo img { aspect-ratio: 4 / 3; object-position: 55% 50%; box-shadow: var(--shadow-3); }
+.both-chip {
+  position: absolute;
+  z-index: 1;
+  left: calc(-1 * var(--space-8));
+  bottom: calc(-1 * var(--space-7));
+  width: min(19rem, 78%);
+  padding: var(--space-5);
+  color: var(--c-navy);
+  background: var(--c-paper);
+  border-top: 2px solid var(--c-brass);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-3);
+}
+.both-sides .both-chip .eyebrow { color: var(--c-muted); margin-bottom: var(--space-3); }
+.both-list { display: grid; gap: var(--space-3); margin: 0; padding: 0 0 0 var(--space-5); list-style: none; border-left: 1px solid var(--c-brass); }
+.both-list li { position: relative; font-family: var(--font-serif); font-weight: 600; line-height: 1.3; }
+.both-list li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-5) - 4px);
+  top: 0.45em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-brass);
+}
+.both-chip-foot { margin: var(--space-4) 0 0; font-size: var(--step--1); color: var(--c-muted); }
+@media (max-width: 56.24em) {
+  .both-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+  .both-media { margin-bottom: 0; }
+  .both-chip { position: relative; left: auto; bottom: auto; margin: -2.5rem 0 0 auto; width: min(19rem, 88%); }
+}
+
+/* Preparation band */
+.prep::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 35%;
+  z-index: -1;
+  background: var(--texture-contour) right center / cover no-repeat;
+  opacity: 0.12;
+  -webkit-mask-image: linear-gradient(to left, #000 25%, transparent 95%);
+  mask-image: linear-gradient(to left, #000 25%, transparent 95%);
+}
+.prep-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-8); align-items: start; }
+.prep-head { position: sticky; top: calc(var(--pv-top, 0px) + var(--header-h) + var(--space-6)); margin-bottom: 0; }
+.prep-head .button-row { margin-top: var(--space-6); }
+.prep-list { margin: 0; padding: 0; list-style: none; }
+.prep-item { position: relative; display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0 var(--space-5); padding-block: var(--space-6); }
+.prep-item::before,
+.prep-item:last-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-hairline-strong), var(--color-hairline-strong) 70%, transparent);
+}
+.prep-item:last-child::after { top: auto; bottom: 0; }
+.prep-icon {
+  grid-row: 1 / span 4;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--c-navy);
+  background: var(--c-paper);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 50%;
+  transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-spring);
+}
+.prep-icon .icon { width: 1.375rem; height: 1.375rem; }
+.prep-item:hover .prep-icon,
+.prep-item:focus-within .prep-icon { border-color: var(--c-brass-dark); transform: translateY(-2px); }
+.prep-item > :not(.prep-icon) { grid-column: 2; }
+.prep-item h3 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.prep-item p { color: var(--c-muted); max-width: 56ch; }
+.prep-item .text-link { justify-self: start; margin-top: var(--space-2); }
+@media (max-width: 56.24em) {
+  .prep-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  .prep-head { position: static; }
+}
+@media (max-width: 30em) {
+  .prep-item { grid-template-columns: 1fr; }
+  .prep-icon { grid-row: auto; margin-bottom: var(--space-4); }
+  .prep-item > :not(.prep-icon) { grid-column: 1; }
+}
+
+/* Local office close */
+.local-close { padding-top: var(--section-y); }
+.local-close .footer-offices-head .section-title { margin-bottom: var(--space-4); }
+.local-intro { max-width: 40rem; }
+.local-intro p:not(.eyebrow) { max-width: 52ch; color: var(--c-on-dark-muted); }
+.local-intro .local-merge { padding-left: var(--space-4); border-left: 1px solid var(--c-brass); font-size: var(--step--1); }
+.local-close .ornament { margin-bottom: var(--space-5); }
+.local-close .footer-office-hours { margin-bottom: var(--space-1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .prep-item:hover .prep-icon, .prep-item:focus-within .prep-icon { transform: none; }
+}
+
+/* Revision 1 */
+/* Services: lead card fills the stack, rows equal */
+@media (min-width: 56.25em) {
+  .svc-lead { align-self: stretch; display: flex; }
+  .svc-lead .route-card { flex: 1; height: auto; }
+  .route-card--lead .route-card-media { flex: 1 1 auto; aspect-ratio: auto; min-height: 20rem; }
+  .route-card--lead .route-card-body { flex: none; min-height: 0; }
+  .svc-list { grid-auto-rows: 1fr; }
+  .route-card--row .route-card-media { min-height: 12rem; }
+}
+
+/* One team chip on phones */
+.both-list li { text-wrap: balance; }
+@media (max-width: 56.24em) {
+  .both-photo { --frame-x: 0.625rem; --frame-y: -0.625rem; margin-right: 0.625rem; }
+  .both-chip { width: auto; margin: -2.5rem 0 0 var(--space-4); }
+}
+
+/* Preparation band: full-width intro, three tiles */
+.prep-top { position: relative; }
+.prep-top::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: calc(-1 * var(--space-6));
+  bottom: var(--space-6);
+  left: 58%;
+  right: 0;
+  background: var(--texture-contour) right center / contain no-repeat;
+  opacity: 0.09;
+  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent 95%);
+  mask-image: linear-gradient(to left, #000 30%, transparent 95%);
+  pointer-events: none;
+}
+.prep-intro { max-width: 40rem; }
+.prep-intro .button-row { margin-top: var(--space-6); }
+.prep-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.prep-tile {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--c-paper);
+  border-top: 2px solid var(--c-navy);
+  border-radius: 0 0 var(--radius) var(--radius);
+  transition: box-shadow var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+}
+.prep-tile:hover,
+.prep-tile:focus-within { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+.prep-tile-icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-5);
+  color: var(--c-navy);
+  background: var(--c-sand);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 50%;
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.prep-tile:hover .prep-tile-icon,
+.prep-tile:focus-within .prep-tile-icon { border-color: var(--c-brass-dark); }
+.prep-tile-icon .icon { width: 1.375rem; height: 1.375rem; }
+.prep-tile-title { font-size: var(--step-2); margin-bottom: var(--space-3); }
+.prep-tile p { color: var(--c-muted); }
+.prep-tile .text-link { align-self: flex-start; margin-top: auto; padding-top: var(--space-5); }
+.prep-tile .editor-note { margin-top: var(--space-3); }
+@media (max-width: 64em) {
+  .prep-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prep-tile:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 56.24em) {
+  .prep-tiles { grid-template-columns: 1fr; gap: var(--space-5); }
+  .prep-top::after { content: none; }
+}
+@media (max-width: 40em) { .prep-tile { padding: var(--space-5); } }
+
+/* Local close: intro left, defined action block right */
+.local-head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-6) var(--space-8);
+  align-items: end;
+  margin-bottom: var(--space-8);
+}
+.local-actions {
+  padding: var(--space-6);
+  background: rgba(251, 250, 246, 0.04);
+  border: 1px solid var(--color-hairline-dark);
+  border-top: 2px solid var(--c-brass);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.local-actions .local-merge { margin-bottom: var(--space-5); font-size: 1rem; color: var(--c-on-dark-muted); max-width: 46ch; }
+.local-office { display: flex; flex-direction: column; }
+.local-office address,
+.local-office-where { margin-bottom: var(--space-1); color: var(--c-on-dark-muted); }
+.local-office-note { margin: 0 0 var(--space-1); font-size: 1rem; color: var(--c-on-dark-muted); max-width: 34ch; }
+.local-office .text-link { align-self: flex-start; margin-top: auto; padding-top: var(--space-4); }
+@media (max-width: 56.24em) {
+  .local-head { grid-template-columns: 1fr; }
+}
+@media (max-width: 40em) {
+  .local-actions { padding: var(--space-5); }
+  .local-actions .button { flex: 1 1 100%; }
+}
+
+/* Footer on phones: two link columns */
+@media (max-width: 47.99em) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7) var(--space-5); }
+  .footer-brand, .footer-contact { grid-column: 1 / -1; }
+}
+
+/* Wide screens: hero holds its presence */
+@media (min-width: 100em) {
+  .hero-horizon--page .hero-content { max-width: 56rem; }
+  .hero-horizon--page .hero-title { font-size: clamp(4.25rem, 1rem + 3.4vw, 5.5rem); max-width: 15ch; }
+  .hero-horizon--page .hero-intro { font-size: 1.5rem; max-width: 46ch; }
+  .hero-horizon--page .hero-label { font-size: 0.9375rem; }
+  .hero-horizon--page .hero-rule { width: 15rem; }
+  .hero-horizon--page .button { min-height: 3.5rem; padding: 0.75rem 2rem; font-size: 1.125rem; }
+  .site-header .nav-list > .nav-item > .nav-link { font-size: 1rem; }
+  .header-cta { font-size: 1rem; padding: 0.625rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prep-tile:hover, .prep-tile:focus-within { transform: none; }
+}
+
+/* Revision 2 */
+/* Revision 2 */
+
+/* One team chip: two clean lines, no split compound */
+.both-list li { text-wrap: pretty; }
+@media (min-width: 56.25em) {
+  .both-chip { width: min(21rem, 86%); }
+}
+
+/* Preparation tiles: titles and links on one line, links share the card foot */
+.prep-tile-title { font-size: var(--step-1); line-height: 1.25; }
+.prep-tile .text-link { white-space: nowrap; }
+.prep-band .editor-note { margin-top: var(--space-5); }
+@media (min-width: 64.01em) {
+  .prep-tile { padding: var(--space-6) var(--space-5); }
+}
+@media (max-width: 22.5em) {
+  .prep-tile .text-link { white-space: normal; }
+}
+
+/* Whitby merger line: a fact, not a footnote */
+.local-office-note {
+  position: relative;
+  padding-left: var(--space-4);
+  font-size: var(--step-0);
+  line-height: var(--lh-body);
+  color: var(--c-on-dark-muted);
+  margin-bottom: var(--space-1);
+}
+.local-office-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--c-brass);
+}
+
+/* Phone footer: tighter link rhythm, 44px targets kept */
+@media (max-width: 47.99em) {
+  .footer-inner { padding-top: var(--space-8); }
+  .footer-nav li + li { margin-top: 0; }
+  .footer-nav a { min-height: 2.75rem; }
+  .footer-grid { row-gap: var(--space-6); }
+  .footer-legal { margin-top: var(--space-6); }
+}
+
+/* Wide screens: the hero carries real presence */
+@media (min-width: 100em) {
+  .hero-horizon--page .hero-content { max-width: 64rem; }
+  .hero-horizon--page .hero-title {
+    font-size: clamp(5rem, 0.6rem + 4.6vw, 6.5rem);
+    max-width: 16ch;
+    margin-bottom: var(--space-6);
+  }
+  .hero-horizon--page .hero-intro { font-size: 1.5rem; max-width: 48ch; margin-bottom: var(--space-7); }
+  .hero-horizon--page .hero-label { font-size: 1rem; margin-bottom: var(--space-6); }
+  .hero-horizon--page .hero-rule { width: 17rem; margin-bottom: var(--space-6); }
+  .hero-horizon--page .button { min-height: 3.25rem; padding: 0.75rem 2.25rem; font-size: 1.125rem; }
+  .hero-horizon--page .hero-cue { font-size: 0.875rem; }
+  .site-header .nav-list > .nav-item > .nav-link { font-size: 1.0625rem; }
+  .site-header .nav-list { gap: 2rem; }
+  .header-cta { min-height: 3.25rem; font-size: 1.0625rem; padding: 0.75rem 1.75rem; }
+  .site-header--over-hero:not(.is-scrolled):not(.menu-open) { --logo-h: 5.25rem; }
+  .route-card--lead .route-card-media img { object-position: 46% 72%; }
+}</style>
+<link rel="stylesheet" href="../assets/preview.css">
+
+</head>
+<body>
+<nav class="pv-bar" aria-label="Design preview">
+<a class="pv-title" href="../index.html">Elevation CPA design concept · v2</a>
+<span class="pv-tag"><span class="pv-dot" aria-hidden="true"></span>Personal and Family Services</span>
+<span class="pv-step"><a href="../home/index.html" aria-label="Previous page: Home">← Previous</a><a href="../personal/personal-tax/index.html" aria-label="Next page: Personal Tax">Next →</a></span>
+<span class="pv-tools">
+<label for="pv-page">Go to</label><select id="pv-page"><optgroup label="Homepage"><option value="../home/index.html">Home</option></optgroup><optgroup label="Personal and Family Services"><option value="../personal/index.html" selected>Personal and Family Services</option><option value="../personal/personal-tax/index.html">Personal Tax</option></optgroup><optgroup label="Business Services"><option value="../business/index.html">Business Services</option><option value="../business/corporate-tax/index.html">Corporate Tax and Financial Statements</option></optgroup><optgroup label="About"><option value="../about/index.html">About</option><option value="../about/team/index.html">Our Team</option></optgroup><optgroup label="Locations"><option value="../locations/port-perry/index.html">Port Perry Office</option></optgroup><optgroup label="Contact and Book a Consultation"><option value="../contact/index.html">Contact and Book a Consultation</option></optgroup></select>
+<a href="../design-system/index.html">Design system</a>
+<button type="button" class="pv-btn" id="pv-mobile" aria-pressed="false">Phone width</button>
+<button type="button" class="pv-btn" id="pv-structure" aria-pressed="false">Structure only</button>
+<button type="button" class="pv-btn pv-approve" id="pv-approve">Approve<span class="pv-long"> this version</span></button>
+</span>
+</nav>
+<header class="site-header site-header--over-hero" data-header><a class="skip-link" href="#main">Skip to main content</a><div class="header-bar"><div class="header-inner"><a class="brand" href="../home/index.html" aria-label="Elevation CPA home"><img class="brand-logo brand-logo--on-dark" src="../assets/brand/logo-on-dark.png" alt="" width="344" height="117"><img class="brand-logo brand-logo--on-light" src="../assets/brand/logo-on-light.png" alt="" width="344" height="117"></a><nav class="main-nav" id="main-nav" aria-label="Main"><ul class="nav-list"><li class="nav-item has-children"><a class="nav-link is-current" href="../personal/index.html" aria-current="page">Personal Services</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-personal-and-family-services"><span class="sr-only">Personal and Family Services pages</span></button><ul class="submenu" id="sub-personal-and-family-services"><li class="nav-item"><a class="nav-link" href="../personal/personal-tax/index.html">Personal Tax</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Estate and Trust Planning</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Cross-Border and US Tax</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="../business/index.html">Business Services</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-business-services"><span class="sr-only">Business Services pages</span></button><ul class="submenu" id="sub-business-services"><li class="nav-item"><a class="nav-link" href="../business/corporate-tax/index.html">Corporate Tax and Financial Statements</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Bookkeeping, Payroll and HST</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Business Advisory</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Audit and Review Engagements</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">CRA Disputes and Audit Support</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="../about/index.html">About</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-about"><span class="sr-only">About pages</span></button><ul class="submenu" id="sub-about"><li class="nav-item"><a class="nav-link" href="../about/team/index.html">Our Team</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="#" data-unbuilt="1">Locations</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-locations"><span class="sr-only">Locations pages</span></button><ul class="submenu" id="sub-locations"><li class="nav-item"><a class="nav-link" href="../locations/port-perry/index.html">Port Perry Office</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Uxbridge Office</a></li><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Whitby Office</a></li></ul></li><li class="nav-item has-children"><a class="nav-link" href="#" data-unbuilt="1">Client Resources</a><button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-controls="sub-client-resources"><span class="sr-only">Client Resources pages</span></button><ul class="submenu" id="sub-client-resources"><li class="nav-item"><a class="nav-link" href="#" data-unbuilt="1">Frequently Asked Questions</a></li></ul></li><li class="nav-item"><a class="nav-link" href="../contact/index.html">Contact</a></li></ul></nav><a class="header-cta" href="../contact/index.html" aria-label="Book a consultation"><span class="header-cta-short">Consultation</span><span class="header-cta-full">Book a consultation</span></a><button class="menu-toggle" type="button" data-menu-toggle aria-controls="main-nav" aria-expanded="false"><span class="menu-toggle-label">Menu</span></button></div></div></header>
+<main id="main">
+<section class="hero-horizon hero-horizon--page" data-hero="" aria-labelledby="hero-title">
+  <div class="hero-media">
+    <picture><source type="image/avif" srcset="../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/480.avif 480w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/800.avif 800w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/1200.avif 1200w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/1536.avif 1536w" sizes="100vw"><source type="image/webp" srcset="../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/480.webp 480w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/800.webp 800w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/1200.webp 1200w, ../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/1536.webp 1536w" sizes="100vw"><img src="../assets/media/b204bb0b-ed0e-4fe9-b61d-82016b45c161-1328f98bcde1/1200.webp" alt="A stack of papers with a pen, a pair of reading glasses and a blue mug on a sunlit wooden table" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async" data-media-id="b204bb0b-ed0e-4fe9-b61d-82016b45c161" data-max-width="1536" data-provenance="generated" style="object-position:60% 65%;background-image:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUI4AAzMeWpGpeiIzgAD9/OghR6BPSvTzrXt5eqawph4e/7hDKSq41QJctj+LBHvujE7UeUqRpREdGQCG/bTgA1RrL83Ac0AA)"></picture>
+  </div>
+  <div class="container container--wide">
+    <div class="hero-content">
+      <p class="hero-label">Personal and family services</p>
+      <h1 class="hero-title" id="hero-title">Tax and planning help for you and your&nbsp;family</h1>
+      <span class="hero-rule" aria-hidden="true"></span>
+      <p class="hero-intro">Elevation CPA helps individuals and families in Port Perry, Uxbridge, Whitby and across Durham Region with personal tax returns, tax planning, estates and cross-border&nbsp;filings.</p>
+      <div class="hero-actions">
+        <a class="button button--primary" href="../contact/index.html">Book a consultation</a>
+        <a class="button button--ghost" href="#offices">Find your local office</a>
+      </div>
+    </div>
+  </div>
+  <a class="hero-cue" href="#services">
+    <span>Explore services</span>
+    <span class="hero-cue-line" aria-hidden="true"></span>
+  </a>
+</section>
+
+<section class="section section--light" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="svc-layout">
+      <div class="section-head" data-reveal="">
+        <p class="eyebrow eyebrow--rule">Choose a service</p>
+        <h2 class="section-title" id="services-title">Find the help you&nbsp;need</h2>
+        <p class="section-intro">Whether it is your yearly return, an estate or a US filing, start here. Pick the service that fits your situation, or <a href="../contact/index.html">book an appointment</a> and we’ll point you in the right&nbsp;direction.</p>
+      </div>
+
+      <div class="svc-lead" data-reveal="" style="--reveal-index: 1">
+        <article class="route-card route-card--lead">
+          <div class="route-card-media">
+            <picture><source type="image/avif" srcset="../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/480.avif 480w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/800.avif 800w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/1200.avif 1200w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/1536.avif 1536w" sizes="(min-width: 56.25em) 40vw, 100vw"><source type="image/webp" srcset="../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/480.webp 480w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/800.webp 800w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/1200.webp 1200w, ../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/1536.webp 1536w" sizes="(min-width: 56.25em) 40vw, 100vw"><img src="../assets/media/0829ce72-72c6-4db9-ab51-059472696d07-1c9185b1bfee/1200.webp" alt="A clipboard with a blank checklist, a pencil and a stack of receipts on a wooden desk in warm sunlight" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="0829ce72-72c6-4db9-ab51-059472696d07" data-max-width="1536" data-provenance="generated" style="object-position:45% 60%;background-image:url(data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoYABAAPu1mqk4ppaOiMAgBMB2JQBOmUABMES8iP/DL5e7vQAD+0ZPopzxkhYR47vNRkWFbFshd4P1QiUphDFS96QbUVg3XRK5f47ifcudj53Hag8K4yQISZyf3wmTgAAA=)"></picture>
+          </div>
+          <div class="route-card-body">
+            <p class="eyebrow">Your yearly return</p>
+            <h3 class="route-card-title"><a class="route-card-link" href="../personal/personal-tax/index.html">Personal tax</a></h3>
+            <p>For employees, retirees, landlords, contractors and anyone who wants their return done right and their tax planned&nbsp;ahead.</p>
+            <span class="route-card-more" aria-hidden="true">Personal tax</span>
+          </div>
+        </article>
+      </div>
+
+      <ul class="svc-list">
+        <li data-reveal="" style="--reveal-index: 2">
+          <article class="route-card route-card--row">
+            <div class="route-card-media">
+              <picture><source type="image/avif" srcset="../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/480.avif 480w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/800.avif 800w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/1200.avif 1200w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/1536.avif 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><source type="image/webp" srcset="../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/480.webp 480w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/800.webp 800w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/1200.webp 1200w, ../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/1536.webp 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><img src="../assets/media/13063005-6ef7-4948-a06c-6f1b036adc57-91e8cff138f2/1200.webp" alt="A fountain pen resting on a ribbon-tied cream document folder on a dark wooden desk" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="13063005-6ef7-4948-a06c-6f1b036adc57" data-max-width="1536" data-provenance="generated" style="object-position:52% 55%;background-image:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwBACdASoYABAAPu1kqk4ppaQiMAgBMB2JYwCdMoADK/Mn0XJeX4XfougA/bM6rkzAAAUbIQZ5SHiZq5sFwk8l7COtmBbxarQuh+0Ko8xbHU3Q+0+UrwiNvIV5QZoGQjHpbcAA)"></picture>
+            </div>
+            <div class="route-card-body">
+              <p class="eyebrow">Families and executors</p>
+              <h3 class="route-card-title"><a class="route-card-link" href="#" data-unbuilt="1">Estate and trust planning</a></h3>
+              <p>For families planning how assets will pass on, and for executors handling a loved one’s final returns and estate&nbsp;filings.</p>
+              <span class="route-card-more" aria-hidden="true">Estate planning</span>
+            </div>
+          </article>
+        </li>
+        <li data-reveal="" style="--reveal-index: 3">
+          <article class="route-card route-card--row">
+            <div class="route-card-media">
+              <picture><source type="image/avif" srcset="../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/480.avif 480w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/800.avif 800w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/1200.avif 1200w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/1536.avif 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><source type="image/webp" srcset="../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/480.webp 480w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/800.webp 800w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/1200.webp 1200w, ../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/1536.webp 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><img src="../assets/media/aa8e7d24-c87a-4edd-a05e-55d1a50af944-d0dbc118c378/1200.webp" alt="A mug, a notebook and a pen beside a wool blanket on a wooden dock over a misty lake at sunrise" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="aa8e7d24-c87a-4edd-a05e-55d1a50af944" data-max-width="1536" data-provenance="generated" style="object-position:30% 60%;background-image:url(data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoYABAAPu1krU6ppaSiMAgBMB2JQBOgA8qT6hk5Ho+pwsdMAP5bMM38Tbp60SPJmvFfXVEYlIjG9oeRSfIUvC5SILUz8IbOO5ivIuj/jQAAAA==)"></picture>
+            </div>
+            <div class="route-card-body">
+              <p class="eyebrow">US property and income</p>
+              <h3 class="route-card-title"><a class="route-card-link" href="#" data-unbuilt="1">Cross-border and US tax</a></h3>
+              <p>For Canadians with US rental property, US citizens living in Canada, and anyone trying to recover tax withheld on US casino&nbsp;winnings.</p>
+              <span class="route-card-more" aria-hidden="true">Cross-border tax</span>
+            </div>
+          </article>
+        </li>
+        <li data-reveal="" style="--reveal-index: 4">
+          <article class="route-card route-card--row">
+            <div class="route-card-media">
+              <picture><source type="image/avif" srcset="../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/480.avif 480w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/800.avif 800w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/1200.avif 1200w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/1536.avif 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><source type="image/webp" srcset="../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/480.webp 480w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/800.webp 800w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/1200.webp 1200w, ../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/1536.webp 1536w" sizes="(min-width: 56.25em) 20vw, (min-width: 30em) 34vw, 100vw"><img src="../assets/media/bfd0e05e-7d50-4987-960c-1807c92171b7-8a9cb9092367/1200.webp" alt="Hands on a wooden desk, one holding a pen over a printed document, the other using a calculator" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="bfd0e05e-7d50-4987-960c-1807c92171b7" data-max-width="1536" data-provenance="generated" style="object-position:45% 50%;background-image:url(data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwBACdASoYABAAPu1kq04ppaQiMAgBMB2JQBOmUGSxiQFEDew68orac6QBeAD+7ohNlI1I3xyMmXQQVv76ijD6Sb9rJGOHVGGJ9xmOvh2LDM2cyF9Wy69O+yCyLsV3nVOc7wAA)"></picture>
+            </div>
+            <div class="route-card-body">
+              <p class="eyebrow">A letter from the&nbsp;CRA</p>
+              <h3 class="route-card-title"><a class="route-card-link" href="#" data-unbuilt="1">CRA disputes and audit support</a></h3>
+              <p>For anyone who has received a CRA review, reassessment or audit letter and wants a professional to explain it and&nbsp;respond.</p>
+              <span class="route-card-more" aria-hidden="true">CRA support</span>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark both-sides" aria-labelledby="business-title">
+  <div class="container">
+    <div class="both-grid">
+      <div class="both-text" data-reveal="">
+        <p class="eyebrow eyebrow--rule">Business owners</p>
+        <h2 class="section-title" id="business-title">Own a business too?</h2>
+        <p>Many of our personal clients also own a business or hold shares in a corporation. Your personal and corporate taxes affect each other, from how you pay yourself to how you plan for retirement or&nbsp;succession.</p>
+        <p>We can look after both sides together. The same local team prepares your personal return and your corporate tax and year-end financial statements, so your planning stays consistent and you only have to explain your situation&nbsp;once.</p>
+        <a class="button button--secondary" href="../business/index.html">See business services</a>
+      </div>
+      <div class="both-media" data-reveal="" style="--reveal-index: 1">
+        <div class="both-photo frame-offset">
+          <picture><source type="image/avif" srcset="../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/480.avif 480w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/800.avif 800w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/1200.avif 1200w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/1536.avif 1536w" sizes="(min-width: 56.25em) 45vw, 100vw"><source type="image/webp" srcset="../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/480.webp 480w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/800.webp 800w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/1200.webp 1200w, ../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/1536.webp 1536w" sizes="(min-width: 56.25em) 45vw, 100vw"><img src="../assets/media/5565c6b4-80bc-428e-895e-d8d683596412-19a4fea5c7b8/1200.webp" alt="A hand holding a pencil over a printed spreadsheet beside a brass ruler in warm window light" width="1536" height="1024" loading="lazy" decoding="async" data-media-id="5565c6b4-80bc-428e-895e-d8d683596412" data-max-width="1536" data-provenance="generated" style="object-position:62% 45%;background-image:url(data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwBACdASoYABAAPu1kqk4ppaQiMAgBMB2JYwCdACBr/GqunfLHtJsCXIAA/oE1QH0ZcBcXpb5GZJfCvVAk2RyYYwKxGGjOyNZuthDiJ/jzlEBn8/nuXDXDCJjgWnl/xE5yVr6i4IgAAA==)"></picture>
+        </div>
+        <div class="both-chip">
+          <p class="eyebrow">One team, both sides</p>
+          <ul class="both-list">
+            <li>Your personal return</li>
+            <li>Your corporate tax and year‑end financial&nbsp;statements</li>
+          </ul>
+          <p class="both-chip-foot">Planned together, explained once.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt prep-band" id="prepare" aria-labelledby="prep-title">
+  <div class="container">
+    <div class="prep-top">
+      <div class="section-head prep-intro" data-reveal="">
+        <p class="eyebrow eyebrow--rule">Before you call</p>
+        <h2 class="section-title" id="prep-title">Get ready for your&nbsp;appointment</h2>
+        <p class="section-intro">A little preparation makes your appointment quicker and helps us make sure nothing is&nbsp;missed.</p>
+        <div class="button-row">
+          <a class="button button--secondary" href="#" data-unbuilt="1">Go to client resources</a>
+          <a class="text-link" href="#" data-unbuilt="1">Read the FAQ</a>
+        </div>
+      </div>
+    </div>
+    <ul class="prep-tiles">
+      <li class="prep-tile" data-reveal="" style="--reveal-index: 1">
+        <span class="prep-tile-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg></span>
+        <h3 class="prep-tile-title">Personal tax checklists</h3>
+        <p>Download checklists for personal income tax, rental income, self-employment, vehicle and home expenses, the eligible educator tax credit and travel medical&nbsp;expenses.</p>
+        <a class="text-link" href="#" data-unbuilt="1">Download the tax checklists</a>
+      </li>
+      <li class="prep-tile" data-reveal="" style="--reveal-index: 2">
+        <span class="prep-tile-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"></rect><path d="M3 10h18M8 3v4M16 3v4M8 14.5h3"></path></svg></span>
+        <h3 class="prep-tile-title">Filing deadlines</h3>
+        <p>Check the key personal tax dates for the year, including the deadlines that apply if you are self-employed.</p>
+        <a class="text-link" href="#" data-unbuilt="1">See the tax deadlines</a>
+      </li>
+      <li class="prep-tile" data-reveal="" style="--reveal-index: 3">
+        <span class="prep-tile-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .8-1 1.5v.6M12 17h.01"></path></svg></span>
+        <h3 class="prep-tile-title">Frequently asked questions</h3>
+        <p>Answers to common questions, such as how long to keep your tax records and how a CPA differs from a&nbsp;bookkeeper.</p>
+        <a class="text-link" href="#" data-unbuilt="1">Read the record-keeping FAQ</a>
+      </li>
+    </ul>
+    <p class="editor-note">Confirm whether the filing deadlines link goes to a deadlines page or a&nbsp;calendar.</p>
+  </div>
+</section>
+
+<section class="section section--dark footer-offices local-close" id="offices" aria-labelledby="local-title">
+  <div class="container">
+    <div class="local-head">
+      <div class="local-intro" data-reveal="">
+        <span class="ornament ornament--small" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><path d="M2 38h156" opacity=".35"></path><path d="M2 34C34 34 52 31 74 26S118 14 150 10" opacity=".55"></path><path d="M2 29C30 29 50 26 72 20S114 8 146 5" opacity=".8"></path><path d="M2 24C26 24 46 21 68 15S108 4 140 2"></path><circle cx="150" cy="10" r="2.5" fill="currentColor" stroke="none"></circle></svg></span>
+        <p class="eyebrow">Talk to us</p>
+        <h2 class="section-title" id="local-title">Talk to your local&nbsp;office</h2>
+        <p>The same local team can help with your personal tax and your family’s longer-term planning. Book an appointment at the office closest to you, or ask for a video call that suits your&nbsp;schedule.</p>
+      </div>
+      <div class="local-actions" data-reveal="" style="--reveal-index: 1">
+        <p class="local-merge">We are bringing three local practices together under one name. Our Whitby office, currently Copetti and Co, becomes Elevation CPA in January&nbsp;2027.</p>
+        <div class="button-row">
+          <a class="button button--primary" href="../contact/index.html">Book a consultation</a>
+          <a class="button button--ghost" href="#" data-unbuilt="1">Find your office</a>
+        </div>
+      </div>
+    </div>
+    <ul class="footer-offices-list local-offices">
+      <li class="footer-office local-office" data-reveal="">
+        <h3 class="footer-office-name">Port Perry</h3>
+        <address>204&nbsp;Casimir Street<br>Port Perry, Ontario L9L 1B7</address>
+        <p class="footer-office-phone"><a href="tel:+19059850006"><span class="nowrap">905⁠-⁠985⁠-⁠0006</span></a></p>
+        <a class="text-link" href="../locations/port-perry/index.html">Visit the Port Perry office page</a>
+      </li>
+      <li class="footer-office local-office" data-reveal="" style="--reveal-index: 1">
+        <h3 class="footer-office-name">Uxbridge</h3>
+        <p class="local-office-where">Meet our Uxbridge team in person, or book a video&nbsp;call.</p>
+        <a class="text-link" href="#" data-unbuilt="1">Visit the Uxbridge office page</a>
+      </li>
+      <li class="footer-office local-office" data-reveal="" style="--reveal-index: 2">
+        <h3 class="footer-office-name">Whitby</h3>
+        <address>601&nbsp;Brock Street<br>Whitby, Ontario L1N 4L1</address>
+        <p class="footer-office-phone"><a href="tel:+19056662111"><span class="nowrap">905⁠-⁠666⁠-⁠2111</span></a></p>
+        <p class="local-office-note">Currently Copetti and Co, becoming Elevation CPA in January&nbsp;2027</p>
+        <a class="text-link" href="#" data-unbuilt="1">Visit the Whitby office page</a>
+      </li>
+    </ul>
+    <p class="editor-note">Confirm current hours for all three offices, and supply the Uxbridge office address and phone&nbsp;number.</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="ornament" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M2 38h156" opacity=".35"/><path d="M2 34C34 34 52 31 74 26S118 14 150 10" opacity=".55"/><path d="M2 29C30 29 50 26 72 20S114 8 146 5" opacity=".8"/><path d="M2 24C26 24 46 21 68 15S108 4 140 2"/><circle cx="150" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg></div><div class="footer-grid"><div class="footer-brand"><img class="footer-logo" src="../assets/brand/logo-on-dark.png" alt="Elevation CPA" width="344" height="117"><p class="footer-tagline">Local CPAs for Durham Region businesses and families, in Port Perry, Uxbridge and Whitby.</p><a class="button footer-cta" href="../contact/index.html">Book a consultation</a></div><nav class="footer-nav" aria-label="Footer"><h2 class="footer-heading">Explore</h2><ul><li><a href="../personal/index.html">Personal Services</a></li><li><a href="../business/index.html">Business Services</a></li><li><a href="../about/index.html">About</a></li><li><a href="#" data-unbuilt="1">Locations</a></li><li><a href="#" data-unbuilt="1">Client Resources</a></li><li><a href="../contact/index.html">Contact</a></li></ul></nav><nav class="footer-nav" aria-label="More"><h2 class="footer-heading">More</h2><ul><li><a href="#" data-unbuilt="1">Careers</a></li><li><a href="#" data-unbuilt="1">Privacy Policy</a></li><li><a href="#" data-unbuilt="1">Accessibility</a></li></ul></nav><div class="footer-offices"><h2 class="footer-heading">Offices</h2><ul><li class="footer-office"><a class="footer-office-name" href="../locations/port-perry/index.html">Port Perry</a><address><p>204 Casimir Street</p><p><a href="tel:9059850006">905-985-0006</a></p><p>Mon–Fri 8:30 am–4:30 pm</p></address></li><li class="footer-office"><a class="footer-office-name" href="#" data-unbuilt="1">Whitby</a><address><p>601 Brock Street</p><p><a href="tel:9056662111">905-666-2111</a></p></address></li></ul></div></div><div class="footer-legal"><p>© 2026 Elevation CPA</p></div></div></footer>
+<script src="../assets/config.js"></script><script src="../assets/preview.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0}
+img,svg,video{display:block;max-width:100%;height:auto}
+picture{display:contents}
+img[data-media-id]{background-size:cover;background-position:center}
+h1,h2,h3,h4{text-wrap:balance}
+html[style*="--header-offset"] body.no-hero{padding-top:var(--header-offset)!important}
+.footer-offices ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.footer-office address{font-style:normal}.footer-office p{margin:2px 0}
+/* Blueprint's footer links take the footer's own text colour unless the design styles them: a site-wide link colour (navy) on a navy footer can't be read. */
+.site-footer .footer-offices a{color:inherit}
+.footer-office-name{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.footer-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:16px}
+/* Not list items: on a two-line bullet "pretty" pulls words down, so the first line stops well short. */
+p,blockquote,figcaption{text-wrap:pretty}
+table,.price,.tabular,[data-tabular]{font-variant-numeric:tabular-nums}
+.nowrap{white-space:nowrap}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:12px;z-index:1000;padding:10px 16px}
+.skip-link:not(:focus){clip-path:inset(50%);width:1px;height:1px;padding:0;overflow:hidden;white-space:nowrap}
+[data-header]{top:var(--pv-top,0px)}
+[id]{scroll-margin-top:110px}
+.video-frame{display:block;width:100%;aspect-ratio:16/9;border:0}
+.editor-note{display:block;margin:12px 0;padding:10px 14px;border:1.5px dashed #b45309;border-radius:6px;background:#fff7ed;color:#7c2d12;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0;text-transform:none;text-align:left}
+.editor-note::before{content:"Note for review: ";font-weight:700}
+.site-footer .footer-nav li>a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.header-cta-short{display:none!important}
+@media (max-width:899px){.header-cta-full{display:none!important}.header-cta-short{display:inline!important}}
+.specimen-intro h1,.specimen-intro h2{position:static!important;margin:0 0 16px!important;line-height:1.15!important;transform:none!important}
+.specimen-intro p{position:static!important;margin:0 auto 12px!important;max-width:65ch!important;transform:none!important}
+.specimen-intro{padding:72px 24px 56px;border-top:1px solid rgba(127,127,127,.25);border-bottom:1px solid rgba(127,127,127,.25)}
+.specimen-intro-inner{max-width:760px;margin:0 auto;text-align:center}
+.specimen-kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin:0 0 8px}
+/* Blueprint's documentation on the specimen: its own light panels and colours, so it reads (and passes contrast) whatever tones the system gives its sections. */
+.specimen-toc{max-width:1120px;margin:40px auto 0;padding:24px;border-radius:12px;background:#f7f7f5;color:#202124;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left}
+.specimen-toc ol{list-style:none;margin:0;padding:0}
+.specimen-toc>ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px 32px}
+.specimen-toc a{color:#202124!important;text-decoration:none}
+.specimen-toc>ol>li>a{display:flex;align-items:center;min-height:44px;font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.specimen-toc li li a{display:flex;gap:8px;align-items:center;min-height:44px}
+.specimen-toc li li a:hover{text-decoration:underline}
+.specimen-toc li li a span{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:#5f6368}
+.specimen-group{padding:0 0 24px}
+.specimen-group-title{display:block!important;margin:0!important;padding:56px max(24px,calc((100% - 1232px) / 2)) 8px!important;background:#f7f7f5!important;font:700 13px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:#3c4043!important;text-align:left!important}
+.specimen-head{display:grid!important;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline;margin:0!important;padding:20px max(24px,calc((100% - 1232px) / 2)) 18px!important;background:#f7f7f5!important;border-top:1px solid #dadce0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;text-align:left!important}
+.specimen-num{grid-row:span 2;font:600 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace!important;color:#5f6368!important}
+.specimen-name{margin:0!important;font:600 18px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#202124!important}
+.specimen-use{margin:2px 0 0!important;max-width:80ch!important;font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#4a4f55!important}
+.specimen-item--pointer{background:#f7f7f5}
+.specimen-pointer{margin:0!important;padding:0 max(24px,calc((100% - 1232px) / 2)) 12px calc(max(24px,calc((100% - 1232px) / 2)) + 36px)!important;background:#f7f7f5}
+.specimen-pointer a{display:inline-flex;align-items:center;min-height:44px;color:#202124!important}
+.specimen-demo{padding-top:16px}
+.specimen-swatches{max-width:1280px;margin:0 auto;padding:8px 24px 32px}
+.specimen-type{max-width:1280px;margin:0 auto;padding:8px 24px 32px}
+#sb-colour .specimen-demo{background:#f7f7f5}
+.specimen-swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.specimen-swatch{display:flex;flex-direction:column;gap:4px;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#3c4043!important}
+.specimen-chip{display:block;height:64px;border-radius:8px;border:1px solid rgba(0,0,0,.12)}
+.specimen-tokens{color:#5f6368;overflow-wrap:anywhere}
+.specimen-type>*+*{margin-top:16px!important}
+button[data-video]{cursor:pointer}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+}
+@media print{
+  [data-header],.site-footer nav,.pv-bar,[data-video],.no-print{display:none!important}
+  body{color:#000;background:#fff}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em}
+}

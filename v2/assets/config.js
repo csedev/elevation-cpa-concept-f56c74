@@ -1,0 +1,1 @@
+window.PV_CONFIG = Object.assign({"approveUrl":null,"token":"","version":2,"agency":"Lft Marketing","deploymentId":"4c39a387-7a9f-4114-8c19-6243feb10693-v2","feedback":null}, { page: location.pathname });

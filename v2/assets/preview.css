@@ -1,0 +1,45 @@
+.pv-bar{position:absolute;top:0;left:0;right:0;z-index:60;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px 20px;background:#111417;color:#F4F7F8;font:15px/22px system-ui,-apple-system,"Segoe UI",sans-serif}
+.pv-bar a{color:#F4F7F8;text-underline-offset:3px}.pv-bar a:hover{color:#FCCA46}
+.pv-bar a:focus-visible,.pv-bar select:focus-visible,.pv-bar button:focus-visible{outline:3px solid #FCCA46;outline-offset:2px}
+.pv-title{font-weight:700;text-decoration:none}
+.pv-tag{display:inline-flex;align-items:center;gap:6px;color:#C8D3D9}
+.pv-dot{width:10px;height:10px;border-radius:50%;background:#FCCA46}
+.pv-step{display:inline-flex;gap:14px}
+.pv-tools{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;margin-left:auto}
+.pv-tools label{color:#C8D3D9}
+.pv-bar select,.pv-btn{min-height:34px;padding:4px 10px;border:1px solid #4E6470;border-radius:6px;background:#1C2228;color:#F4F7F8;font:inherit;cursor:pointer}
+.pv-btn[aria-pressed=true]{background:#F4F7F8;color:#111417}
+.pv-approve{background:#FCCA46;color:#111417;border-color:#FCCA46;font-weight:700}
+.pv-frame{position:fixed;inset:0;z-index:300;background:#2A3036;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px;overflow:auto}
+.pv-frame iframe{width:390px;height:min(844px,calc(100vh - 80px));border:10px solid #111;border-radius:36px;background:#fff;flex:none}
+.pv-frame .pv-btn{background:#111417}
+.pv-dialog{border:0;border-radius:12px;padding:24px;max-width:440px;width:calc(100% - 32px);font:16px/1.5 system-ui,sans-serif;color:#111}
+.pv-dialog::backdrop{background:rgba(0,0,0,.5)}
+.pv-dialog h2{margin:0 0 8px;font-size:22px}
+.pv-dialog label{display:block;font-weight:600;margin:14px 0 6px}
+.pv-dialog input,.pv-dialog textarea{width:100%;box-sizing:border-box;min-height:44px;padding:8px 10px;border:1px solid #888;border-radius:6px;font:inherit}
+.pv-dialog .pv-row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.pv-dialog button{min-height:44px;padding:8px 16px;border-radius:6px;border:1px solid #111;background:#fff;font:inherit;cursor:pointer}
+.pv-dialog button[type=submit]{background:#111;color:#fff}
+.pv-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html.pv-embedded .pv-bar{display:none}
+/* Embedded (and in automated checks, which remove the bar): no space kept for it, whatever height was last measured. */
+html.pv-embedded{--pv-bar-h:0px!important}
+html.pv-embedded.pv-has-bar{padding-top:0}
+/* On a phone the bar stays compact: the page picker takes a row of its own and nothing runs off the screen. */
+@media (max-width:600px){
+.pv-bar{gap:6px 12px;padding:8px 12px;font-size:14px;line-height:20px}
+.pv-title{flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pv-tag{display:none}
+.pv-step{flex:none;gap:10px}
+.pv-tools{margin-left:0;width:100%;min-width:0;gap:6px}
+.pv-tools label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pv-bar select{flex:1 1 100%;min-width:0;max-width:100%}
+.pv-bar .pv-btn{min-height:32px;padding:4px 8px;font-size:13px}
+#pv-mobile,.pv-long{display:none}
+}
+/* The bar sits at the very top of the document, outside the page's own layout: a page
+   that pads its body to clear a fixed header must not push the bar down under that header. */
+html.pv-has-bar{padding-top:var(--pv-bar-h,0px)}
+.pv-illustrative{position:absolute;z-index:55;padding:3px 8px;border-radius:999px;background:rgba(17,20,23,.82);color:#F4F7F8;font:600 11px/16px system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.02em;pointer-events:none}
+html.structure .pv-illustrative{display:none}
