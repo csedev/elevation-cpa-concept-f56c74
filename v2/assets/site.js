@@ -4,10 +4,7 @@
   html.classList.add('js');
   var header = d.querySelector('[data-header]');
   var hero = d.querySelector('[data-hero]');
-  var bar = d.querySelector('.pv-bar');
   function onScroll() {
-    var barH = bar && !html.classList.contains('pv-embedded') ? bar.offsetHeight : 0;
-    html.style.setProperty('--pv-top', Math.max(0, barH - w.scrollY) + 'px');
     if (header) header.classList.toggle('is-scrolled', !hero || w.scrollY > 48);
   }
   w.addEventListener('scroll', onScroll, { passive: true });

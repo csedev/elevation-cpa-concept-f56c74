@@ -3,15 +3,51 @@
   var params = new URLSearchParams(location.search);
   var embedded = window.self !== window.top || params.get("pv") === "frame";
   if (embedded) document.documentElement.classList.add("pv-embedded");
-  // Reserve the bar's height above the page (it wraps to more lines on a phone).
-  function reserveBar() {
-    var bar = document.querySelector(".pv-bar");
-    var h = bar && !embedded ? bar.offsetHeight : 0;
-    document.documentElement.style.setProperty("--pv-bar-h", h + "px");
-    document.documentElement.classList.toggle("pv-has-bar", h > 0);
+  var html = document.documentElement;
+
+  // Fixed elements are placed against the window, not the page, so the room the page keeps for the tray
+  // doesn't reach them: pull each one that runs under the tray clear of it (a full-width header gets
+  // narrower, a corner button moves over). Measured afresh whenever the page changes or resizes.
+  var fitted = [];
+  function keep(el, prop, value) {
+    fitted.push({ el: el, prop: prop, value: el.style.getPropertyValue(prop), priority: el.style.getPropertyPriority(prop) });
+    el.style.setProperty(prop, value, "important");
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", reserveBar); else reserveBar();
-  window.addEventListener("resize", reserveBar);
+  function fitFixed() {
+    fitted.forEach(function (f) { if (f.value) f.el.style.setProperty(f.prop, f.value, f.priority); else f.el.style.removeProperty(f.prop); });
+    fitted = [];
+    var bar = document.querySelector("body > .pv-bar");
+    if (!bar || embedded || html.classList.contains("pv-embedded")) return;
+    var t = bar.getBoundingClientRect();
+    if (!t.width || !t.height) return;
+    var side = t.height >= innerHeight - 1 ? "right" : "bottom";
+    var room = side === "right" ? t.width : t.height;
+    var limit = (side === "right" ? innerWidth : innerHeight) - room;
+    var all = document.body.getElementsByTagName("*");
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (bar.contains(el) || el.closest(".pv-frame, dialog")) continue;
+      var cs = getComputedStyle(el);
+      if (cs.position !== "fixed") continue;
+      var r = el.getBoundingClientRect();
+      var start = side === "right" ? r.left : r.top, end = side === "right" ? r.right : r.bottom;
+      // Nothing to do when it's clear of the tray, hidden, or parked off-screen (a closed slide-in menu).
+      if (!r.width || !r.height || end <= limit + 0.5 || start >= limit) continue;
+      var span = side === "right" ? "width" : "height";
+      keep(el, side, ((parseFloat(cs[side]) || 0) + room) + "px");
+      // A full-width bar sized with width:100% ignores "right": cap its size too.
+      if (r[span] > limit / 2) keep(el, "max-" + span, Math.max(0, limit - Math.max(0, start)) + "px");
+    }
+  }
+  var fitQueued = 0;
+  function queueFit() { if (!fitQueued) fitQueued = requestAnimationFrame(function () { fitQueued = 0; fitFixed(); }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fitFixed); else fitFixed();
+  window.addEventListener("load", queueFit);
+  window.addEventListener("resize", queueFit);
+  document.addEventListener("transitionend", queueFit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queueFit);
+  // A header that turns fixed once scrolled, a menu that opens, the checks removing the tray.
+  new MutationObserver(queueFit).observe(html, { subtree: true, childList: true, attributes: true, attributeFilter: ["class", "hidden", "open"] });
 
   // Generated images are illustrative stand-ins: say so on each one, without touching the page's layout.
   // (Left off in automated checks, which judge the design itself.)
@@ -39,7 +75,8 @@
   }
 
   // Structure preview: greyscale, no imagery. Remembered for this visit.
-  var structure = params.get("structure") === "1" || sessionStorage.getItem("pv-structure") === "1";
+  var structure = params.get("structure") === "1";
+  try { structure = structure || sessionStorage.getItem("pv-structure") === "1"; } catch (e) {}
   if (params.get("structure") === "0") structure = false;
   function setStructure(on) {
     structure = on; document.documentElement.classList.toggle("structure", on);
@@ -62,8 +99,38 @@
     menu.setAttribute("aria-expanded", String(open)); if (nav) nav.classList.toggle("open", open);
   });
 
-  var jump = document.getElementById("pv-page");
-  if (jump) jump.addEventListener("change", function (e) { location.href = e.target.value; });
+  // The page list: opens beside the tray, closes on Escape or a click elsewhere.
+  var pagesBtn = document.getElementById("pv-pages");
+  var pagesMenu = document.getElementById("pv-pages-menu");
+  function setPages(open, refocus) {
+    if (!pagesBtn || !pagesMenu) return;
+    pagesBtn.setAttribute("aria-expanded", String(open)); pagesMenu.hidden = !open;
+    if (open) { var cur = pagesMenu.querySelector("[aria-current]") || pagesMenu.querySelector("a"); if (cur) { cur.scrollIntoView({ block: "nearest" }); cur.focus(); } }
+    else if (refocus) pagesBtn.focus();
+  }
+  if (pagesBtn && pagesMenu) {
+    pagesBtn.addEventListener("click", function () { setPages(pagesMenu.hidden); });
+    document.addEventListener("click", function (e) { if (!pagesMenu.hidden && !pagesMenu.contains(e.target) && !pagesBtn.contains(e.target)) setPages(false); });
+    pagesMenu.addEventListener("keydown", function (e) {
+      var links = [].slice.call(pagesMenu.querySelectorAll("a")), i = links.indexOf(document.activeElement);
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); var n = links[(i + (e.key === "ArrowDown" ? 1 : -1) + links.length) % links.length]; if (n) n.focus(); }
+    });
+  }
+
+  // The arrow keys step through the pages, except while typing, in a menu or dialog, or on a control that uses them.
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && pagesMenu && !pagesMenu.hidden) { setPages(false, true); return; }
+    if ((e.key !== "ArrowLeft" && e.key !== "ArrowRight") || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    var t = e.target;
+    if (t && t.closest && t.closest('input, textarea, select, [contenteditable=""], [contenteditable=true], dialog, .pv-menu, [role=slider], [role=tablist], [role=tab], [role=listbox], [role=menu], [role=menubar], [role=radiogroup], [role=grid], [role=tree]')) return;
+    if (document.querySelector("dialog[open]")) return;
+    var a = document.querySelector('.pv-bar a[rel~="' + (e.key === "ArrowLeft" ? "prev" : "next") + '"]');
+    if (!a) return;
+    e.preventDefault();
+    // In the phone-width frame, the whole preview moves on (and opens the next page in the frame again).
+    try { if (embedded && window.top !== window.self) { window.top.location.href = a.href; return; } } catch (err) {}
+    location.href = a.href;
+  });
 
   var st = document.getElementById("pv-structure");
   if (st) st.addEventListener("click", function () { setStructure(!structure); });
